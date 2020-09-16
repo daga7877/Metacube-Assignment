@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacube Parking System</title>
+
+    <style>
+
+        /* Add a black background color to the top navigation */
+      .topnav {
+      background-color: #e9ece9;
+      overflow: hidden;
+     }
+    </style>
+</head>
+<body>
+    <h1> Metacube Parking System</h1>
+    <div class="topnav">
+        <a href="#addemployee">Add Employee</a>
+        <a href="#addvehicle">Add Vehicle</a>
+        <a href="#feedback">Give Feedback</a>
+        <a href="#pricing">Pricing</a>
+        <br><br>
+      </div>
+      <img src="https://wfcache.advantech.com/EZ/CMSUserFiles/image//car%20parking(2).png" alt="Error", height="450", width="1350"><br>
+      <div id="addemployee">
+          <h4>Employee Details</h4>
+          <form>
+              <label for="fname">Full Name</label><br>
+              <input type="text" id="fname" name="fname", required><br><br>
+              <label for="gender">Gender</label><br>
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">Female</label><br><br>
+              <label for="email">Email</label><br>
+              <input type="email", id="email", name="email"><br><br>
+              <label for="password">Password</label><br>
+              <input type="password", id="password", name="password", pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}", required><br><br>
+              <label for="confirmpassword">Confirm Password</label><br>
+              <input type="password", id="confirmpassword", name="confirmpassword", required><br><br>
+              <label for="contactnumber">Contact Number</label><br>
+              <input type="number", id="contactnumber", name="contactnumber", required><br><br>
+
+              <input type="submit", value="Add Contact">
+
+          </form>
+      </div><br>
+      
+      <div id="addvehicle">
+          <h4>Vehicle Details</h4>
+          <form >
+              <label for="vehiclecompany">Vehicle Make(Company)</label><br>
+              <select name="vehiclecompany" id="vehiclecompany">
+                  <option value="Tata">Tata</option>
+                  <option value="Maruti">Maruti</option>
+                  <option value="Hero">Hero</option>
+                  <option value="Toyota">Toyota</option>
+                  <option value="Mahindra">Mahindra</option>
+                  <option value="Bajaj">Bajaj</option>
+              </select><br><br>
+              <label for="vehiclemodel">Vehicle Model</label><br>
+              <input type="text", id="vehiclemodel", name="vehiclemodel"><br><br>
+              <label for="vehicle">Vehicle Type</label><br>
+              <input type="radio" id="twowheeler" name="vehicle" value="Two Wheeler">
+              <label for="twowheeler">Two Wheeler</label>
+              <input type="radio" id="fourwheeler" name="vehicle" value="Four Wheeler">
+              <label for="fourwheeler">Four Wheeler</label><br><br>
+              <label for="vehiclenumber">Vehicle Number</label><br>
+              <input type="text", id="vehiclenumber", name="vehiclenumber", required><br><br>
+              <label for="employeeid">Employee ID</label><br>
+              <input type="text", id="employeeid", name="employeeid"><br><br>
+              <label for="identification">Identification of Vehicle</label><br>
+              <textarea name="identification" id="identification" cols="30" rows="10">Color, mark,visible accessory etc</textarea><br><br>
+              
+              <input type="submit", value="Submit">
+              
+          </form>
+      </div><br><br>
+
+      <div id="feedback">
+          <h4>Feedback</h4>
+          <form>
+            <input type="text"  name="fullname", value="Enter Name" required><br><br>
+            <input type="email" name="email" value="Email"><br><br>
+            <textarea name="message" id="message" cols="30" rows="5">Message</textarea><br><br>
+            <input type="submit" value="Submit">
+
+          </form>
+      </div><br><br>
+
+      <div id="pricing">
+          <h4>Pricing</h4>
+
+          <div>
+              <h5>Cycle</h5>
+              <label for="cycleplan">Select Plan</label><br>
+              <input type="radio" id="cycledaily" name="cycleplan" value="5">
+              <label for="cycledaily">$5 Daily</label><br>
+              <input type="radio" id="cyclemonthly" name="cycleplan" value="100">
+              <label for="cyclemonthly">$100 Monthly</label><br>
+              <input type="radio" id="cycleyearly" name="cycleplan" value="500">
+              <label for="cycleyearly">$500 Yearly</label><br><br>
+              <input type="submit" value="Purchase Now">              
+          </div>
+
+          <div>
+            <h5>MotorCycle</h5>
+            <label for="motorcycleplan">Select Plan</label><br>
+            <input type="radio" id="motorcycledaily" name="motorcycleplan" value="10">
+            <label for="motorcycledaily">$10 Daily</label><br>
+            <input type="radio" id="motorcyclemonthly" name="motorcycleplan" value="200">
+            <label for="motorcyclemonthly">$200 Monthly</label><br>
+            <input type="radio" id="motorcycleyearly" name="motorcycleplan" value="1000">
+            <label for="motorcycleyearly">$1000 Yearly</label><br><br>
+            <input type="submit" value="Purchase Now">              
+        </div>
+
+        <div>
+            <h5>Four Wheelers</h5>
+            <label for="fourwheelerplan">Select Plan</label><br>
+            <input type="radio" id="fourwheelerdaily" name="fourwheelerplan" value="20">
+            <label for="fourwheelerdaily">$20 Daily</label><br>
+            <input type="radio" id="fourwheelermonthly" name="fourwheelerplan" value="500">
+            <label for="fourwheelermonthly">$500 Monthly</label><br>
+            <input type="radio" id="fourwheeleryearly" name="fourwheelerplan" value="3500">
+            <label for="fourwheeleryearly">$3500 Yearly</label><br><br>
+            <input type="submit" value="Purchase Now">              
+        </div>
+      </div>
+
+
+</body>
+</html>

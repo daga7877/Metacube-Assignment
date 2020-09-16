@@ -1,0 +1,30 @@
+1. SELECT Name, Date_of_Birth__c, Sex__c FROM Student__c WHERE Last_Name__c LIKE 'S%'
+
+2.SELECT Name FROM Student__c WHERE Class__r.Name LIKE 'X%'
+
+3.Select Student__c.Name, Class__r.Name from Student__c // what should we do when class has no student?
+
+4.Select Class__c.Name, (Select Name from Students__r) from Class__c
+
+5.SELECT Name From Student__c Where Student__c.Class__r.Class_Teacher__r.Name Like 'S%'
+
+6.SELECT Name FROM Student__c WHERE CALENDAR_YEAR(Date_of_Birth__c)> 2000
+
+7.Select name from lead where LastModifiedDate = THIS_MONTH
+
+8.Select Class__c.Name, (Select Name from Students__r where Student__c.Name Like 'S%') from Class__c
+
+9.select Teacher__r.Name from Teach__c where Subject__c= 'English;Hindi'
+
+10.  I could not get it, tell me how it will.
+
+11.SELECT Name,Number_of_Students__c from Class__c
+
+12.Select CALENDAR_MONTH(Date_of_Birth__c), count(Name) from Student__c group by CALENDAR_MONTH(Date_of_Birth__c) order by count(Name) ASC
+
+
+SOSL\
+
+1.FIND {joe} IN Name Fields Returning Student__c(name), Contact(name)
+
+2.FIND {joe} IN Name Fields Returning Student__c(name where Sex__c= 'Male')
