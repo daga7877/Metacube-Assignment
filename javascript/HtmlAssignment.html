@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacube Parking System</title>
+    <link rel="stylesheet" href="CssAssignment.css">
+
+</head>
+
+<body>
+    <h1> Metacube Parking System</h1>
+    <!-- This is Navigation bar -->
+    <ul class="topnav">
+        <li><a href="#addemployee">Add Employee</a></li>
+        <li><a href="#addvehicle">Add Vehicle</a></li>
+        <li><a href="#feedback">Give Feedback</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <!-- This is cover image -->
+    <img src="https://wfcache.advantech.com/EZ/CMSUserFiles/image//car%20parking(2).png" alt="Error" , height="450" ,
+        width="1350"><br>
+
+    <!-- This area for employee details -->
+    <div id="addemployee">
+        <button type="button" class="collapsible">Employee Details</button>
+        <form>
+
+            <div class="singlefield">
+                <br><label for="fname">Full Name</label><br>
+                <input type="text" id="fname" name="fname" , required> <br>
+                <span id="fnameerror"></span><br>
+                <input type="button" name="next" value="next" class="click_next">
+            </div>
+
+            <div class="singlefield">
+                <label id="genderlabel">Gender</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br><br>
+                <input type="button" name="next" value="next" class="click_next">
+            </div>
+            <div class="singlefield">
+                <label id="emaillabel">Email</label><br>
+                <label for="email">Email</label><br>
+                <input type="email" , id="email" , name="email" , required>
+                <span id="error"></span><br>
+                <input type="button" name="next" value="next" class="click_next">
+            </div>
+            <div class="singlefield">
+                <label id="passwordlabel">Password</label><br>
+                <label for="password">Password</label><br>
+                <input type="password" , id="password" , name="password" ,required><br>
+                <span id="passworderror">Password must Content Uppercase, lowercase, number, special
+                    character</span><br>
+                <label for="confirmpassword">Confirm Password</label><br>
+                <input type="password" , id="confirmpassword" , name="confirmpassword" ,required><br><br>
+                <span id="confirmpassworderror"></span><br>
+                <input type="button" name="next" value="next" class="click_next">
+            </div>
+            <div class="singlefield">
+                <label id="contactlabel">Contact</label><br>
+                <label for="contactnumber">Contact Number</label><br>
+                <input type="number" , id="contactnumber" , name="contactnumber" , required><br><br>
+                <input type="submit" name="submit" value="Submit" id="submit_form">
+            </div>
+        </form>
+    </div><br>
+
+    <!-- This area is for Vehicle Details -->
+    <div id="addvehicle">
+        <button type="button" class="collapsible1">Vehicle Details</button>
+        <form>
+            <div class="vehiclefield">
+                <label for="vehiclecompany">Vehicle Make(Company)</label><br>
+                <select name="vehiclecompany" id="vehiclecompany">
+                    <option value="Tata">Tata</option>
+                    <option value="Maruti">Maruti</option>
+                    <option value="Hero">Hero</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Bajaj">Bajaj</option>
+                </select><br><br>
+                <input type="button" name="next" value="next" class="click_next1">
+            </div>
+
+
+            <div class="vehiclefield">
+                <label for="vehiclemodel" , id="vehiclem">Vehicle Model</label><br>
+                <input type="text" , id="vehiclemodel" , name="vehiclemodel" , value="ex-2018"><br><br>
+                <input type="button" name="next" value="next" class="click_next1">
+            </div>
+
+            <div class="vehiclefield">
+                <label for="vehicle" , id="vehicletype">Vehicle Type</label><br>
+                <input type="radio" id="cycle" name="vehicle" value="Cycle">
+                <label for="cycle">Cycle</label>
+                <input type="radio" id="twowheeler" name="vehicle" value="Two Wheeler">
+                <label for="twowheeler">Two Wheeler</label>
+                <input type="radio" id="fourwheeler" name="vehicle" value="Four Wheeler">
+                <label for="fourwheeler">Four Wheeler</label><br><br>
+                <input type="button" name="next" value="next" class="click_next1">
+            </div>
+
+            <div class="vehiclefield">
+                <label for="vehiclenumber" , id="vehiclenumber">Vehicle Number</label><br>
+                <input type="text" , id="vehiclenumber" , name="vehiclenumber" , required><br><br>
+                <input type="button" name="next" value="next" class="click_next1">
+            </div>
+
+            <div class="vehiclefield">
+                <label for="employeeid" , id="employee">Employee ID</label><br>
+                <input type="text" , id="employeeid" , name="employeeid"><br><br>
+                <input type="button" name="next" value="next" class="click_next1">
+            </div>
+
+            <div class="vehiclefield">
+                <label for="identification" , id="vehicleidentification">Identification of Vehicle</label><br>
+                <textarea name="identification" id="identification" cols="30" rows="10"></textarea><br><br>
+                <input type="submit" , value="Submit" class="button" , id="submitvehicledetails">
+            </div>
+
+        </form>
+    </div><br><br>
+
+    <!-- This is javascript for collapse -->
+    <script src="parking.js"></script>
+
+    <!-- This is feedback form -->
+    <div id="feedback" , class="feedbackbox">
+        <h4>Feedback</h4>
+        <form>
+            <input type="text" name="fullname" , value="Enter Name" required><br><br>
+            <input type="email" name="email" value="Email"><br><br>
+            <textarea name="message" id="message" cols="30" rows="5">Message</textarea><br><br>
+            <input type="submit" value="Submit" class="button">
+
+        </form>
+    </div><br><br>
+
+    <!-- This is priceing section -->
+    <div id="pricing">
+        <h4 class="topnav">Pricing</h4>
+        <div class="pricing">
+            <div class="pricingbox pricingfield">
+                <h5>Cycle</h5>
+                <h6 class="circle" id="cwheele">$100 Monthly</h6>
+                <input type="radio" id="cycledaily" name="cycleplan" value="5">
+                <label for="cycledaily">$5 Daily</label><br>
+                <input type="radio" id="cyclemonthly" name="cycleplan" value="100">
+                <label for="cyclemonthly">$100 Monthly</label><br>
+                <input type="radio" id="cycleyearly" name="cycleplan" value="500">
+                <label for="cycleyearly">$500 Yearly</label><br><br>
+                <input type="submit" value="Purchase Now" class="button">
+            </div>
+
+            <div class="pricingbox pricingfield">
+                <h5>MotorCycle</h5>
+                <h6 class="circle" id="twheele">$200 Monthly</h6>
+                <input type="radio" id="motorcycledaily" name="motorcycleplan" value="10">
+                <label for="motorcycledaily">$10 Daily</label><br>
+                <input type="radio" id="motorcyclemonthly" name="motorcycleplan" value="200">
+                <label for="motorcyclemonthly">$200 Monthly</label><br>
+                <input type="radio" id="motorcycleyearly" name="motorcycleplan" value="1000">
+                <label for="motorcycleyearly">$1000 Yearly</label><br><br>
+                <input type="submit" value="Purchase Now" class="button">
+            </div>
+
+            <div class="pricingbox pricingfield">
+                <h5>Four Wheelers</h5>
+                <h6 class="circle" id="fwheele">$500 Monthly</h6>
+                <input type="radio" id="fourwheelerdaily" name="fourwheelerplan" value="20">
+                <label for="fourwheelerdaily">$20 Daily</label><br>
+                <input type="radio" id="fourwheelermonthly" name="fourwheelerplan" value="500">
+                <label for="fourwheelermonthly">$500 Monthly</label><br>
+                <input type="radio" id="fourwheeleryearly" name="fourwheelerplan" value="3500">
+                <label for="fourwheeleryearly">$3500 Yearly</label><br><br>
+                <input type="submit" value="Purchase Now" class="button">
+            </div>
+        </div>
+    </div>
+
+    <script src="vehicle.js"></script>
+    <script src="price.js"></script>
+</body>
+
+</html>

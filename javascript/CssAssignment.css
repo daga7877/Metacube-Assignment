@@ -1,0 +1,126 @@
+/* This style for navigation bar */
+.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover{
+    background-color: #6af0ad;
+  }
+  
+  /* Background color for body */
+ html, body{
+      background-color: #f8f1f1;
+      margin: 1px;
+      height: 100%;
+  }
+
+  .collapsible {
+    background-color: #0c0c0c;
+    color: #f5eeee;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #5d44e9;
+  }
+  
+   /* Feedback section style */
+  .feedbackbox {
+    width: 900px;
+    border: 15px solid #1390b6;
+    padding: 60px;
+    background-color: #0d758f;
+    background-image: url(img/feedback.jpg);
+  }
+
+  .pricingbox {
+      border: 2px solid #0c0c0c;
+      border-radius: 2mm;
+      padding: 10px;
+      margin: 15px;
+      width: 220px;
+      
+  }
+  
+  .pricingbox h5{
+      text-align: center;
+      font-size: 4ch;
+      margin-top: 0cm;
+
+  }
+
+  .pricing div{
+      float: left;
+  }
+   /* for Submit and purchase now */
+  .button{
+      background-color: rgb(237, 241, 232);
+      color: blue;
+      border-radius: 3mm;
+      margin: 2ch;
+      text-align: center;
+  }
+
+  .circle{
+    border: 2px solid black;
+    border-radius: 100%;
+    padding: 30px;
+    margin: 50px;
+    font-size: 15px;
+  }
+
+  #pricing h4{
+    color: cornsilk;
+  }
+  .singlefield{
+    display: none;
+  }
+
+  .vehiclefield{
+    display: none;
+  }
+
+  .collapsible1 {
+    background-color: #0c0c0c;
+    color: #f5eeee;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+
+  .collapsible1:hover {
+    background-color: #5d44e9;
+  }
+
+  .pricingfield{
+    display: none;
+  }
+
+  
