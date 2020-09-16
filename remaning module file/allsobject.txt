@@ -1,0 +1,9 @@
+public class allsobject {
+    
+    public static void showsobject()
+    {
+        List<sObject> objname=[SELECT QualifiedApiName FROM EntityDefinition WHERE IsCustomSetting = false order by QualifiedApiName ASC];
+        System.debug(objname);
+    }
+
+}

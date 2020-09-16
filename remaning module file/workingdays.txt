@@ -1,0 +1,27 @@
+public class workingdays {
+    
+    public static Integer daysBetweenExcludingWeekends(Datetime startDate, Datetime endDate) {
+    //Work out days in range
+    Integer days = startDate.date().daysBetween(endDate.date());
+        
+    //Remove most weekends by removing 2 in 7 days (rounded down)
+    days -= ((integer)Math.floor((days / 7)) * 2);
+
+    if (startDate.format('E') != 'Sat') {
+        days -= 1;
+    } else if (startDate.format('E') != 'Sun') {
+        days -= 2;
+    }
+    System.debug(days);
+    return days;
+}
+
+}
+
+
+
+debug:- Execute anonymous
+
+Date startd = Date.today().addDays(-7);
+Date endd = Date.today().addDays(+7);
+workingdays.daysBetweenExcludingWeekends(startd,endd);

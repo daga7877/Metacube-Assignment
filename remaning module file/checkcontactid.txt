@@ -1,0 +1,30 @@
+public class checkcontactid {
+    
+    public static void updatecontactid(ID ContactId)
+    {
+        Contact con = [SELECT ID,Account.ID,Account.ContactIDs__c FROM Contact WHERE ID=:contactID];
+        if(con.Account.ContactIDs__c==null)
+        {
+            List<Contact> ListCon = [Select ID from Contact where Account.ID=:con.Account.ID];
+            String IDs = '';
+            for(Integer i=0;i<ListCon.size();++i)
+            {
+                IDs = IDs + String.valueOf(ListCon[i].ID)+',';
+            }
+            con.Account.ContactIDs__c = IDs;
+            Update con.Account;
+        }
+        else
+        {
+            if(con.Account.ContactIDs__c.contains(contactID))
+            {
+                System.debug('Already Exist');
+            }
+            else
+            {
+                con.Account.ContactIDs__c = con.Account.ContactIDs__c+String.valueOf(contactID)+',';
+                Update con.Account;
+            }
+        }
+    }
+}

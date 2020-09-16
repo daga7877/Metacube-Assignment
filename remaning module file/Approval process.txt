@@ -1,0 +1,48 @@
+APEX trigger code:
+
+trigger ApprovalOppTrigger on Loan__c (after insert, after update) {
+  
+ Approval.ProcessSubmitRequest [] requestList = new Approval.ProcessSubmitRequest []{};
+ 
+ for( Loan__c loan : trigger.new ){
+ 
+ //If amount is greater than 15000, go for apporval
+ if(loan.Amount__c> 15000){
+ 
+ Approval.ProcessSubmitRequest req1 = new Approval.ProcessSubmitRequest();
+ req1.setComments('Submitting request for approval.');
+ req1.setObjectId(loan.id);
+ 
+ req1.setProcessDefinitionNameOrId('Loan Amount Process');
+ }
+ 
+ }
+ 
+ if(requestList.size()>0)
+ Approval.ProcessResult[] result = Approval.process(requestList);
+ 
+}
+
+
+Approve Record:-
+
+/*
+ * This method will Approve the Loan
+ */
+
+ public void approveRecord(Loan__c loan)
+ {
+ Approval.ProcessWorkitemRequest req = new Approval.ProcessWorkitemRequest();
+ req.setComments('Approving request for loan');
+ 
+ req.setAction('Approved');
+ 
+ ProcessInstanceWorkitem pItem = [Select Id from ProcessInstanceWorkitem 
+ where ProcessInstance.TargetObjectId =: loan.id];
+
+ req.setWorkitemId(pItem.Id);
+ Approval.ProcessResult result = Approval.process(req);
+ 
+ }
+
+

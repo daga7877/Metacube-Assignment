@@ -1,0 +1,15 @@
+public class getStudentsname {
+    
+    public static List<Student__c> studentname(String classid)
+    {
+        try
+        {
+          List <Student__c> stdname = [Select name from Student__c where Class__r.id=:classid];
+          System.debug(stdname);
+          return stdname;
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+    }
