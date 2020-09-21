@@ -1,0 +1,37 @@
+public class ProductsSelector extends fflib_SObjectSelector implements IProductsSelector{
+    private static ProductsSelector instance = null;
+    public List<Schema.SObjectField> getSObjectFieldList() {
+        return new List<Schema.SObjectField> {
+            Product2.Description,
+                Product2.Id,
+                Product2.Name,
+                Product2.ProductCode,
+                Product2.Priceperunit__c , 
+                Product2.Quantity__c };
+                    }
+    public Schema.SObjectType getSObjectType() {
+        return Product2.sObjectType;
+    }
+    public static ProductsSelector getInstance(){
+        if(instance == null) 
+            instance = new ProductsSelector();
+        return instance;
+    }
+    public List<Product2> selectById(Set<ID> idSet) {
+        return (List<Product2>) selectSObjectsById(idSet);
+    }
+    public List<Product2> getProducts(String productName){
+        List<Product2> prodlist=null;
+        if(String.isNotBlank(productName) || String.isNotEmpty(productName)){
+            prodlist = (List<Product2>) Database.query(
+                newQueryFactory().  
+                setCondition('name LIKE  \''+productName+'%\'').toSOQL()
+            );
+        }else{
+            prodlist = (List<Product2>) Database.query(
+                newQueryFactory().toSOQL()
+            );
+        }
+        return prodlist;
+    }
+}
